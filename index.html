@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="assets/BOMB.mp3"/>
+    <link rel="preload" href="assets/GAME.mp3"/>
+    <link rel="preload" href="assets/jump.mp3"/>
+    <link rel="preload" href="assets/cha.mp3"/>
+    <title>To the moon</title>
+    <style>
+        button{
+            padding-left: 3px;
+            padding-right: 3px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            background-color: lightblue;
+            display: inline;
+            flex: 0;
+        }
+        #pause_menu{
+            align-items: center;
+            z-index: 100;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 10px;
+
+            background-color: rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+        }
+        #pause_reason{
+            font-size: 2rem;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <button
+       onclick="pause('Game Paused')"
+    >Paused ||</button>
+    <div id="pause_menu">
+        <p id="pause_reason">Paused</p>
+       <button onclick="cont()">Continue =></button>
+       <button onclick="window.history.go(0)">Restart</button>
+       <button onclick="credits()">Credits</button>
+    </div>
+
+    <div id ='health' style="
+    background: white;
+
+        color: darkblue;position: fixed; top: 10px; left: 200px;font-size: 2rem;">
+        Health: 100%
+    </div>
+    <div id="score" style="background-color: white;
+        color: darkcyan; position: fixed; top:10px; right: 60px; font-style: italic; font-size: 3rem;font-weight: bold;">
+        Score: 0
+    </div>
+    <div id="world" style="background-size: cover; background-position: center center; height: 95vh; width: 98vw;z-index:0;background: url(assets/bkg.jpg);">
+
+    </div>
+    
+    <!--
+
+        The below is for test
+    -->
+
+    <script src="scripts/vector.js"></script>
+    <script src = 'scripts/world.js'></script>
+    <script src ='scripts/game_object.js'></script>
+    <script src="scripts/Collider.js"></script>
+    <script src="scripts/collision_cheker.js"></script>
+    <script src = 'scripts/gravity.js'></script>
+    <script src = 'scripts/platform.js'></script>
+    <script src = 'scripts/kbd.js'></script>
+    <script src = 'scripts/bullet.js'></script>
+    <script src="scripts/bomb.js"></script>
+    <script src="scripts/ghost.js"></script>
+    <script src="scripts/health.js"></script>
+    
+    <script src="scripts/money.js"></script>
+    <script src = 'scripts/game.js'></script>
+</body>
+</html>
